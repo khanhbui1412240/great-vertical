@@ -1,0 +1,124 @@
+{
+"text_localization" : {
+			"Completed": "Completed: ",
+			"of":" of ",
+			"ExitWarning": "Warning: This will action will terminate the current session."
+		},
+"useIframe" : true,
+"totalPages" : 12,
+"quizPassingScore": 80,
+"visitAllPageToComplete": true,
+"sectionConfig": [
+	 {"pages":[1] },
+	 {"pages":[2] },
+	 {"pages":[3] },
+	 {"pages":[4] },
+   {"pages":[5] },
+	 {"pages":[6] },
+	 {"pages":[7] },
+	 {"pages":[8] },
+	 {"pages":[9] },
+   {"pages":[10] },
+	 {"pages":[11] },
+   {"pages":[12] }],
+"sectionDetails": [
+	{
+		"title": "Welcome",
+		"bullets":[
+			{"label": "1. Welcome", "link": "1", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 638
+	},{
+		"title": "Vocab Review",
+		"bullets":[
+			{"label": "2. Vocab Review", "link": "2", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 691
+  },{
+		"title": "Zero Client and Thin Client Matchin...",
+		"bullets":[
+			{"label": "3. Zero Client and Thin Client Matchin...", "link": "3", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 978
+	},{
+		"title": "Sales Scenario",
+		"bullets":[
+			{"label": "4. Sales Scenario", "link": "4", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 739
+	},{
+		"title": "What Would I Recommend?",
+		"bullets":[
+			{"label": "5. What Would I Recommend?", "link": "5", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 719
+  },{
+		"title": "Zero Client Benefits",
+		"bullets":[
+			{"label": "6. Zero Client Benefits", "link": "6", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 798
+	},{
+		"title": "Customer Objections",
+		"bullets":[
+			{"label": "7. Customer Objections", "link": "7", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 901
+  },{
+		"title": "Customer Objections: Recap",
+		"bullets":[
+			{"label": "8. Customer Objections: Recap", "link": "8", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 853
+	},{
+		"title": "Sales Scenario Part 2",
+		"bullets":[
+			{"label": "9. Sales Scenario Part 2", "link": "9", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 739
+	},{
+		"title": "Sales Scenario Part 3",
+		"bullets":[
+			{"label": "10. Sales Scenario Part 3", "link": "10", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 739
+  },{
+		"title": "Zero Clients in Other Industries",
+		"bullets":[
+			{"label": "11. Zero Clients in Other Industries", "link": "11", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 869
+	},{
+		"title": "Wrap-up",
+		"bullets":[
+			{"label": "12. Wrap-up", "link": "12", "bgMusic":false}
+		],
+		"oneLevel": 1,
+		"mustComplete": 0,
+		"height": 781
+	}
+]
+}
+

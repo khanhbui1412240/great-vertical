@@ -1,0 +1,94 @@
+<!-- navigation menu list -->
+<div class="menuWrapper">
+	<div class="blackOverlay" ng-click="hide()"></div>
+	<div class="menuList">
+		
+		<div class="menuContentHeight">
+			<h3 class="logo"><img style="width: 120px;" src="images/logo.png" alt="QUADMARK Template"></h3>
+			<h4 class="moduleTitle">CLOUD ACCESS: SELLING ZERO AND THIN CLIENTS</h4>
+			
+			<div class="menuitems menuBody">
+				<ul class="sectionWrapper nav-list extendMenuHeight" ng-accord>
+					<li class="sectionlevel" ng-repeat="sections in menu" ng-class="{ 'menuDivider': sections.oneLevel == '3'}">
+						<!--section with sub pages-->
+						<h4 ng-accord ng-if="sections.oneLevel == '0'" >
+							<div class="sectlock_{{$index}} sectionLock" >
+								<img src="images/locked_icon.png" alt="Page Locked">
+							</div>
+							<div class="tickSect_{{$index+1}} sectionTick" >
+								<img src="images/tick_grey.png" alt="Section Done" title="This section is completed">
+							</div>
+							<div style="margin-left: 0px;">{{sections.title}}</div>
+						</h4>
+
+						<ul ng-if="sections.oneLevel == '0'">
+							<li ng-if="sections.oneLevel == '0' && item.label" ng-repeat="item in sections.bullets" >
+								<a id="{{item.link}}" ng-click="pageHandler($event,$parent.$parent.$index, $index, item.link); ">
+									<div ng-show="item.label">
+										<div class="tick_{{item.link}} pageTick">
+											<img src="images/tick_grey.png" alt="Page Done" title="This page is completed">
+										</div>
+										<div ng-if="item.lockBySections" class="lock_{{item.link}} pageLock">
+											<img src="images/locked_icon.png" alt="Page Locked">
+										</div>
+										<div class="pageLabel">
+											<span ng-bind-html="item.label"></span>
+										</div>
+										
+									</div>
+								</a>
+							</li>
+						</ul>
+
+						<!--section with single page-->
+						<a ng-if="sections.oneLevel != '0'" id="{{sections.bullets[0].link}}" ng-click="pageHandler($event, $index, 0, sections.bullets[0].link);  " >
+							<div ng-if="sections.bullets[0].lockBySections" class="lock_{{sections.bullets[0].link}} sectionLock" >
+								<img src="images/locked_icon.png" alt="Page Locked" title="This section is locked, please complete section 2">
+							</div>
+							<div class="tickSect_{{$index+1}} sectionTick" >
+							
+							<img src="images/tick_grey.png" alt="Page Done" title="This page is completed">
+							</div>{{sections.bullets[0].label}}
+						</div></a>
+					</li>
+				</ul>
+				<!--div class="androidbot">
+					<img src="images/menu_android_bot.png" alt="android bot">	
+				</div-->
+
+				<p class="copyright body-1">
+					&copy;Samsung 2017. All rights reserved.
+					<!-- <br>Partner with <img src="images/logo_carphone_warehouse.png" alt="Carphone Warehosue" class="partnerLogo"> -->
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /navigation menu list -->
+
+<!-- hamburger menu icon -->
+<div class="naviIconWrapper">
+	<a class="naviIcon" ng-click="showMenu()">
+	    <span></span>
+	</a>
+	<!--h1 ng-breadcrumb class="title"></h1-->
+</div>
+
+<div class="naviIconWrapper audioIconWrapper hidden">
+	<div class="audioOverlay hidden" style="width:50px; height: 50px; top: 15px; width: 50px; z-index: 999; position: absolute;"></div>
+	<a class="naviIcon audioIcon" ng-click="toggleSound()" id="audioIcon">
+    <img id ="audioImage" src="./images/helper_audio_icon_0.png" alt="">
+		<div class="hover-text hidden">Tap to play<br/>the intro</div>
+	</a>
+	<!--h1 ng-breadcrumb class="title"></h1-->
+</div>
+
+<script language='javascript'>
+	$(".audioIconWrapper .audioIcon img").hover(function(){
+		if (document.getElementById("audioImage").src.indexOf("helper_audio_non_sound_icon.png") != -1) {
+				$(".hover-text").removeClass("hidden");
+		}
+  }, function(){
+    $(".hover-text").addClass("hidden");
+  });
+</script>

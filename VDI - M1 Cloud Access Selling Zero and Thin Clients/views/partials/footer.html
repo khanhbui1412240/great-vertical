@@ -1,0 +1,40 @@
+<!-- footer navigation -->
+<div class="colorBlock white-bkg footerNavi">
+    <div class="container-fluid">
+        <div class="row equalheight">
+       			 <!-- last page-->
+        		<a ng-if="currentPage == pageConfig.totalPages" class="leftButton col-xs-12 col-sm-12 col-equalheight {{leftBG}}" ng-click="loadPrevPage()">
+                    <h6 class="title white">
+                        <span class="icon icon-xs"><i class="glyphicon glyphicon-chevron-left"></i></span>
+                        <span class="caption ">Previous</span>
+                        <span class="title ">{{prevTopic}}</span>
+                    </h6>
+                </a>
+                <!-- middle pages-->
+                <a ng-if="currentPage > '1' && currentPage < pageConfig.totalPages" class="leftButton col-xs-2 col-sm-6 col-equalheight {{leftBG}}" ng-click="loadPrevPage()">
+                    <h6 class="title white">
+                        <span class="icon icon-xs"><i class="glyphicon glyphicon-chevron-left"></i></span>
+                        <span class="caption hidden-xs">Previous</span>
+                        <span class="title hidden-xs">{{prevTopic}}</span>
+                    </h6>
+                </a>
+                <a ng-if="currentPage > '1' && currentPage != pageConfig.totalPages" class="rightButton col-xs-10 col-sm-6 col-equalheight {{rightBG}}" ng-click="loadNextPage()">
+                    <h6 class="title white">
+                        <span class="icon icon-xs"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                        <span class="caption">Next</span>
+                        <span class="title">{{nextTopic}}</span>
+                    </h6>
+                </a>
+                <!-- first page-->
+                <a ng-if="currentPage == '1'" class="rightButton col-xs-12 col-sm-12 col-equalheight {{rightBG}}" ng-click="loadNextPage()">
+                    <h6 class="title white">
+                        <span class="icon icon-xs"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                        <span class="caption">Next</span>
+                        <span class="title">{{nextTopic}}</span>
+                    </h6>
+                </a>
+        </div>
+    </div>
+</div>
+
+<!-- /footer navigation -->

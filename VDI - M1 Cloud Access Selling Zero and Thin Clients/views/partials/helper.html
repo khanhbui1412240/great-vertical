@@ -1,0 +1,43 @@
+
+<div class="helper" style="position:absolute;z-index: 9999; width: 100%;height: 100%; top: 0px;" >
+	<div class="helperDarkBG" style="width: 100%;height: 100%;background-color: #000;opacity:0.7; top:0;position:absolute;"></div>	
+
+	<div class="helperMenuCont" style="position: absolute;left:3px;top:6px;">
+		<div class="helperMenu" style="width:72px;height:69px;"><img src="./images/helper_menu.png" alt=""></div>
+		<div class="helperMenuArrow" style="position: inherit;left: 28px; top: 57px;width:86px;height:118px;"><img src="./images/helper_menu_arrow.png" alt=""></div>
+		<div class="helperMenuDesc" style="position: inherit;left: 121px; top: 166px; color: #FFF; width: 100px;"><strong>Menu bar</strong><p>View topics and navigate through the module.</p></div>
+	</div>
+
+	<div class="helperProgressCont" style="position: absolute; left: 16%; top: 0px;">
+		<div class="helperProgress" style="width:60px;height:33px;"><img src="./images/helper_progress.png" alt=""></div>
+		<div class="helperProgressArrow" style="position: inherit;left: 35px; top: 25px;width:76px;height:67px;"><img src="./images/helper_progress_arrow.png" alt=""></div>
+		<div class="helperProgressDesc" style="position: inherit;left: 118px; top: 81px; color: #FFF; width: 120px;"><strong>Progress bar </strong><p>Mouse-over to see your progress.</p></div>
+	</div>
+	
+  <div class="helperAudioCont" style="position: absolute; left: 90%; top: 10px;">
+		<div class="helperAudio" style="width:56px;height:56px;"><img src="./images/helper_audio.png" alt=""></div>
+		<div class="helperAudioArrow" style="position: inherit;left: -25px; top: 50px;width:57px;height:67px;"><img src="./images/helper_audio_arrow.png" alt=""></div>
+		<div class="helperAudioDesc" style="position: inherit;left: -150px; top: 100px; color: #FFF; width: 125px;"><strong>Audio control</strong><p>Tap here to stop and/or replay intro audio.</p></div>
+	</div>
+
+  <div class="helperAudioCont hidden" style="left: 0px; bottom: 0px;">
+		<div class="helperAudioArrow" style="position: absolute; left: 80px; bottom: 37px; z-index: 3;"><img src="./images/helper_pause_play_arrow.png" alt=""></div>
+		<div class="helperAudioArrow" style="position: absolute; left: 18px; bottom: 37px; z-index: 3;"><img src="./images/helper_audio_speaker_arrow.png" alt=""></div>
+		<div class="helperAudioDesc" style="position: absolute; left: 70px; bottom: 160px; color: #FFF; width: 180px;"><strong>Audio speaker</strong><p>Click to turn your speakers on and off. Click and hold to adjust your volume.</p></div>
+    <div class="helperAudioDesc" style="position: absolute; left: 150px; bottom: 65px; color: #FFF; width: 180px;"><strong>Play/Pause</strong><p>Click to control your audio.</p></div>
+    <div style="height: 64px; width: 100%; overflow: hidden; position: absolute; left: 0px; bottom: 0px;">
+      <div class="audioBar" style="height: 42px; width: 100%; background-color: rgba(8, 8, 8, 0.7); bottom: 0px; position: absolute; z-index: 2;"></div>
+      <div style="width: 85px; height: 85px; border-radius: 50%; background-color: white; z-index: 1; position: absolute; bottom: -21px; left: 17px;"></div>
+    </div>
+    <div class="image-volume-control" style="position: absolute; z-index: 5; left: 27px; bottom: 10px;"></div>
+    <div class="image-play-audio" style="position: absolute; z-index: 5; left: 73px; bottom: 10px;"></div>
+    <div class="audio-progress" style="height: 10px; width: calc(100% - 220px); background-color: #000; position: absolute; bottom: 16px; left: 115px; z-index: 5;"></div>
+    <div class="audio-loaded" style="height: 10px; width: calc((100% - 220px) * 0.8); background-color: #191a1b; position: absolute; bottom: 16px; left: 115px; z-index: 5;"></div>
+    <div class="audio-played" style="height: 10px; width: calc((100% - 220px)/21*4); background-color: #4c4c4c; position: absolute; bottom: 16px; left: 115px; z-index: 5;"></div>
+    <div class="scrubber" style="width: 21px; height: 21px; border-radius: 50%; border: 2px #4c4c4c solid; position: absolute; bottom: 10px;  background-color: #191a1b; left: calc((100% - 220px)/21*4 + 105px); z-index: 6;"></div>
+    <div class="audio-time" style="font-size: 14px; color: #484848; position: absolute; right: 21px; bottom: 12px; z-index: 5;">0:04 / 0:21</div>
+	</div>
+
+	<div class="closeButton text-center" style="cursor:pointer; position: absolute; left: 23%; top: 206px; background-color: rgb(61, 134, 198); width: 144px; height: 42px; padding: 10px; color: #FFF;" ng-click="close()">OK, got it!</div>
+
+</div>

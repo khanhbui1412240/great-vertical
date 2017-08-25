@@ -1,0 +1,42 @@
+@import url("http://fast.fonts.net/lt/1.css?apiType=css&c=c5f94b1d-ca86-4dd0-9d67-520ac81c7ae1&fontids=694033");
+@import url("http://fast.fonts.net/lt/1.css?apiType=css&c=c5f94b1d-ca86-4dd0-9d67-520ac81c7ae1&fontids=1459684,694021");
+
+@font-face{
+font-family:"HelveticaNeueRegular";
+  src: url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Regular/HelveticaNeue-Regular.eot'); /* IE9 Compat Modes */
+  src: url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Regular/HelveticaNeue-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Regular/HelveticaNeue-Regular.woff2') format('woff2'), /* Modern Browsers */
+   url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Regular/HelveticaNeue-Regular.woff') format('woff'), /* Modern Browsers */
+   url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Regular/HelveticaNeue-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+   url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Regular/HelveticaNeue-Regular.svg') format('svg'); /* Legacy iOS */
+}
+
+@font-face{
+font-family:"HelveticaNeueBold";
+  src: url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Bold/HelveticaNeue-Bold.eot'); /* IE9 Compat Modes */
+  src: url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Bold/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Bold/HelveticaNeue-Bold.woff2') format('woff2'), /* Modern Browsers */
+    url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Bold/HelveticaNeue-Bold.woff') format('woff'), /* Modern Browsers */
+    url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Bold/HelveticaNeue-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Bold/HelveticaNeue-Bold.svg') format('svg'); /* Legacy iOS */
+}
+
+@font-face{
+font-family:"HelveticaNeueThin";
+  src: url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Thin/HelveticaNeue-Thin.eot'); /* IE9 Compat Modes */
+  src: url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Thin/HelveticaNeue-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Thin/HelveticaNeue-Thin.woff2') format('woff2'), /* Modern Browsers */
+    url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Thin/HelveticaNeue-Thin.woff') format('woff'), /* Modern Browsers */
+    url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Thin/HelveticaNeue-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('https://s3-us-west-1.amazonaws.com/samsunglcmsproduction2/fonts/Helvetica_Neue_Thin/HelveticaNeue-Thin.svg') format('svg'); /* Legacy iOS */
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+#Stage_contentEle, #Stage_transparent_overlay {
+	left: 0px !important;
+	margin: 0 auto !important;
+	position: relative !important;
+}

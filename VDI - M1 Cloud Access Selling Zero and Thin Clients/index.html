@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cloud Access: Selling Zero and Thin Clients</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/audio-js.css">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body ng-app="elearningApp" style="overflow: hidden;">
+    <!--[if lte IE 8]>
+      <div class="oldies-main-overlay"></div>
+        <div class="oldies-overlay">
+            <div class="oldies">
+                <h3>Did you know that your Internet Browser is out of date?</h3>
+                <p>Your browser is out of date, and may not be compatible with our website. A list of the most popular web browsers can be found below.</p>
+                <p>Please <a href="javascript: location.reload();">refresh this page</a> after you have successfully installed any of these recommended browsers.</p>
+                <ul>
+                    <li>
+                        <a href="http://www.google.com.sg/chrome/" target="_blank">
+                            <img src="./images/browsers/browser_chrome.gif" alt="Google Chrome"><br>
+                            <span class="oldies-title">Google Chrome</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">
+                            <img src="./images/browsers/browser_firefox.gif" alt="Mozilla Firefox"><br>
+                            <span class="oldies-title">Firefox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://support.apple.com/kb/DL1531?viewlocale=en_US&locale=en_US" target="_blank">
+                            <img src="./images/browsers/browser_safari.gif" alt="Safari"><br>
+                            <span class="oldies-title">Safari</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">
+                            <img src="./images/browsers/browser_msie.gif" alt="Internet Explorer"><br>
+                            <span class="oldies-title">Internet Explorer</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    <![endif]-->
+
+    <!-- Counter -->
+    <ng-counter></ng-counter>
+
+    <!-- Menu -->
+    <div ng-menu class="navigator-wrapper" id="navigator"></div>
+
+    <div class="contentWrapper" ng-resize ng-scroll>
+        <div ng-view id="contContainer"></div>
+
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        ! function(A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+
+    <script language='javascript'>
+			function inIframe () {
+			    try {
+			        return window.self !== window.top;
+			    } catch (e) {
+			        return true;
+			    }
+			}
+				
+      var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+      var eventer = window[eventMethod];
+      var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+			
+			if (inIframe() == false) {
+				var redirectUrl = "";
+				if (window.location.href.indexOf("samsunglcmsproduction") > -1) {
+					redirectUrl = "https://samsunglcms.com/#/login";
+					window.location.href = redirectUrl;
+				}
+				else if (window.location.href.indexOf("samsunglcmspreproduction") > -1) {
+					redirectUrl = "https://preproduction.samsunglcms.com/#/login";
+					window.location.href = redirectUrl;
+				}
+				else if (window.location.href.indexOf("samsunglcmsstaging") > -1) {
+					redirectUrl = "https://samsunglcmsfront.projectwebby.com/#/login";
+					window.location.href = redirectUrl;
+				}
+				var scripts = document.createElement('script');
+	      scripts.src = "scripts/scripts.js";
+	      document.getElementsByTagName('body')[0].appendChild(scripts);
+			}
+			else {
+	      // Listen to message from child window
+	      eventer(messageEvent,function(e) {
+					if (e.data.post_message_type == "show-helper-page"){
+						window.is_show_helper_page = e.data.data.is_show_helper_page;
+						var scripts = document.createElement('script');
+			      scripts.src = "scripts/scripts.js";
+			      document.getElementsByTagName('body')[0].appendChild(scripts);
+					}
+		      else if (e.data.post_message_type == "data-completed-pages"){
+	          window.completed_pages = e.data.data.completed_pages;
+	        }
+	        else if (e.data.post_message_type == "data-previous-page"){
+	          window.previous_page = e.data.data.previous_page;
+	        }
+		      else if (e.data.post_message_type == "data-authentication-token"){
+						$.ajax({
+	            type: "GET",
+	            url: e.data.data.domain + "/api/authenticate_request",
+	            data: {authentication_token: e.data.data.authentication_token},
+	            contentType: "application/json; charset=utf-8",
+	            success: function (data) {
+	            },
+	            error: function (textStatus, errorThrown) {
+								parent.postMessage({post_message_type: "redirect-to-login-page"}, "*" ); 
+	            }
+	        	});
+		      }
+	        if (e.data == "lock") {
+	          // $('.naviIcon').css({'cursor': 'default', 'pointer-events': 'none'});
+	        }
+	        else if (e.data == "unlock") {
+	          // $('.naviIcon').css({'cursor': 'pointer', 'pointer-events': 'auto'});
+	        }
+					else if (e.data == "hideAudioIcon") {
+						$('.audioIconWrapper').addClass("hidden");
+					}
+					else if (e.data == "showAudioIcon") {
+						$('.audioIconWrapper').removeClass("hidden");
+					}
+					else if (e.data == "showAudioOverlay") {
+						$('.audioOverlay').removeClass("hidden");
+					}
+					else if (e.data == "hideAudioOverlay") {
+						$('.audioOverlay').addClass("hidden");
+					}
+					else if (e.data == "turnOnAudioBackground") {
+				    var audio = document.getElementById("audio-background");
+						audio.currentTime = 0;
+						audio.play();
+				    $('#audioIcon img').attr("src", "images/helper_audio_icon_0.png").css({width: "32px", height: "30px"});
+					}
+					else if (e.data == "turnOffAudioBackground") {
+				    var audio = document.getElementById("audio-background");
+						audio.currentTime = 0;
+						audio.pause();
+				    $('#audioIcon img').attr("src", "images/helper_audio_non_sound_icon.png").css({width: "39px", height: "39px"});
+					}
+	      },false);
+			}
+
+      
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+
+<ng-preloader></ng-preloader>
+
+<!-- iframe -->
+<iframe id="mainIframe" ng-if="useIframe === true" class="iframeCont" width="100%" height="{{frameHeight}}" scrolling="no" ng-src="{{currentPageUrl}}" ng-model='iframe' style="display:block;border: none;  background-color: rgb(245, 245, 245)" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen>
+</iframe>
+
+<div ng-if="useIframe === false" ng-include="currentPageUrl" onload="frameLoaded();"></div>
+<input class="audioPath hidden" value="{{currentPageAudio}}"/>
+<div class="audioControls audio-js-box hidden"></div>
+<!-- footer navigation -->
+<!-- <ng-footer leftbg="lightGreen500-bkg" rightbg="teal500-bkg" ></ng-footer>  -->
+<!-- /footer navigation -->
+
+<!-- bottom-content  -->
+<ng-bottom-content></ng-bottom-content>
+<!-- /bottom-content -->
+
+<!--div style="position: fixed;  left: 50%;  top: 50%;  z-index: -1;"><img src="./images/preloader.gif" style="height: 24px; width: 24px; margin-top: -6px; margin-right: 5px;"> <span style="">Loading in progress..</span></div-->
+<script src="./scripts/audio.js"></script>
+<script language='javascript'>
+	$('#audioIcon img').attr("src", "images/helper_audio_icon_0.png").css({width: "32px", height: "30px"});
+	var i = 0;
+  $('div.audioControls').append('<audio id="audio-background" preload="none" class="audio-js" src="' + $(".audioPath").val() + '" preload="auto" controls style="width: 100%;"></audio>');
+  AudioJS.setup();
+	var audio = document.getElementById('audio-background');
+	
+  $('audio').on('playing', function() {
+		window.playAudioIconAnimation = setInterval(function(){ 
+			if ($('#audioIcon img').attr("src") != "images/helper_audio_non_sound_icon.png") {
+				i++;	
+				$('#audioIcon img').attr("src", "images/helper_audio_icon_" + i + ".png").css({width: "32px", height: "30px"});
+				if (i == 3) {
+					i = -1;
+				}
+			}
+			else {
+				clearInterval(window.playAudioIconAnimation);
+			}
+		}, 1000);
+  });
+
+  $('audio').on('ended', function() {
+		audio.currentTime = 0;
+		document.getElementById('audio-background').pause();
+    document.getElementById("mainIframe").contentWindow.removeOverlay();
+    $('#audioIcon img').attr("src", "images/helper_audio_non_sound_icon.png").css({width: "39px", height: "39px"});
+		document.getElementById("mainIframe").contentWindow.hideTransparentOverlay();
+		if (currentPage() == 3) {
+			document.getElementById("mainIframe").contentWindow.activeFirstContent();
+		}
+  });
+</script>
